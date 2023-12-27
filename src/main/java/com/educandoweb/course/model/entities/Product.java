@@ -1,7 +1,6 @@
-package com.educandoweb.course.entities;
+package com.educandoweb.course.model.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.ManyToAny;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -19,7 +18,12 @@ public class Product implements Serializable {
     private String description;
     private Double price;
     private String imgUrl;
-    @Transient
+
+    @ManyToMany
+    @JoinTable(name = "tb_product_category",
+            joinColumns = @JoinColumn(name = "product_id") // foreign key from product
+            , inverseJoinColumns = @JoinColumn(name = "category_id")) // Foreign key from category
+    // relation n -> n
     private Set<Category> categories = new HashSet<>();
 
     public Product(){}

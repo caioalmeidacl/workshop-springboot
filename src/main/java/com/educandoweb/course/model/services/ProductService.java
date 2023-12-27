@@ -1,8 +1,7 @@
-package com.educandoweb.course.services;
+package com.educandoweb.course.model.services;
 
-import com.educandoweb.course.entities.Category;
-import com.educandoweb.course.entities.Product;
-import com.educandoweb.course.repositories.ProductRepository;
+import com.educandoweb.course.model.entities.Product;
+import com.educandoweb.course.model.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
